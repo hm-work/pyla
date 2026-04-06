@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/hajimemurakami/Documents/rep/01_croom/coincheck-recruit/**)",
+      "Read(//Users/hajimemurakami/Documents/rep/01_croom/RENAISSANCE_Recruit/**)"
+    ]
+  }
+}

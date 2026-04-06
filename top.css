@@ -1,0 +1,13 @@
+/* ==============================
+   [ページ名] ページ固有スタイル
+============================== */
+
+/* rAF 駆動のアニメーション要素は必ず transition: none !important を設定する。
+   Studio のグローバル CSS ( * { transition: .3s ... } ) を上書きするため。
+
+   例:
+   #my-animated-element {
+     will-change: transform;
+     transition: none !important;
+   }
+*/
