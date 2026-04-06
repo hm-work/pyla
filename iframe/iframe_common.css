@@ -11,21 +11,3 @@
   /* 最後の子要素へのスタイル */
   margin-bottom: 0 !important;
 }
-
-.richText table th {
-  width: 250px;
-}
-
-/*TB*/
-@media (max-width: 840px) {
-  .richText table th {
-    width: 100px;
-  }
-}
-
-.richText a:hover {
-  transition: 0.5s;
-}
-.richText a:hover {
-  text-decoration-color: transparent;
-}
