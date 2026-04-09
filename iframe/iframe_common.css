@@ -11,3 +11,40 @@
   /* 最後の子要素へのスタイル */
   margin-bottom: 0 !important;
 }
+
+/* スライド
+-----------------------------------------------------*/
+#slidearea,
+#slidearea * {
+  pointer-events: none !important;
+}
+
+/* max-width解除
+-----------------------------------------------------*/
+
+[id^="maxwidth-none"] {
+  max-width: none !important;
+}
+
+/* 背景
+-----------------------------------------------------*/
+
+[id*="viewport-clip"] {
+  width: 100%;
+  overflow: visible;
+}
+
+@media (max-width: 1439px) {
+  [id*="viewport-clip"] {
+    min-width: 1440px; /* max-widthを上書きして突き破る */
+    overflow: hidden;
+    margin-left: calc((100vw - 1440px) / 2);
+  }
+}
+
+/* ボーダー
+-----------------------------------------------------*/
+
+.border-4 {
+  border: 4px dashed currentColor;
+}
