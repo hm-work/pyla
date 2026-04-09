@@ -42,9 +42,6 @@
   }
 }
 
-/* ボーダー
------------------------------------------------------*/
-
-.border-4 {
-  border: 4px dashed currentColor;
+[id*="object-fit"]::before {
+  background-size: 100% 100% !important;
 }
