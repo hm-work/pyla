@@ -4,11 +4,14 @@
 #fixed_header {
   z-index: 100;
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.4s ease !important;
+}
+
+#fixed_header:not(.is-visible),
+#fixed_header:not(.is-visible) * {
+  pointer-events: none !important;
 }
 
 #fixed_header.is-visible {
   opacity: 1;
-  pointer-events: auto;
 }
