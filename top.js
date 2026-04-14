@@ -44,6 +44,18 @@ window.initOnReady(function () {
   // 最初のスライドをアクティブに
   slides[0].classList.add("is-active");
 
+  // #block-support が画面に入ったら自動再生スタート
+  var block = document.getElementById("block-support");
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && isPlaying) {
+        startTimer();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+  if (block) observer.observe(block);
+
   function goTo(index) {
     if (index === current) return;
     current = index;
@@ -110,7 +122,6 @@ window.initOnReady(function () {
     }
   });
 
-  startTimer();
   return true;
 });
 
