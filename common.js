@@ -15,7 +15,35 @@ function initOnReady(tryInit) {
 }
 
 // ==============================
+// #fixed_header スクロール表示
+// ==============================
+
+function initFixedHeader(threshold) {
+  threshold = threshold || 500;
+
+  initOnReady(function () {
+    var header = document.getElementById("fixed_header");
+    if (!header) return false;
+
+    function onScroll() {
+      if (window.scrollY >= threshold) {
+        header.classList.add("is-visible");
+      } else {
+        header.classList.remove("is-visible");
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return true;
+  });
+}
+
+// ==============================
 // グローバル公開（Studio IIFE対応）
 // ==============================
 
-window.initOnReady = initOnReady;
+window.initOnReady      = initOnReady;
+window.initFixedHeader  = initFixedHeader;
+
+initFixedHeader();
