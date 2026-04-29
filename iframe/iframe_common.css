@@ -12,6 +12,14 @@
   margin-bottom: 0 !important;
 }
 
+.richText ol li:first-child {
+  margin-top: 0 !important;
+}
+
+.richText ol li:last-child {
+  margin-bottom: 0 !important;
+}
+
 /* スライド
 -----------------------------------------------------*/
 #slidearea,
