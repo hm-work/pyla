@@ -1,0 +1,17 @@
+input[type="radio"] + div > div {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+input[type="radio"]:checked + div > div {
+  opacity: 1;
+}
+
+input[type="checkbox"] + div > img {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+input[type="checkbox"]:checked + div > img {
+  opacity: 1;
+}
