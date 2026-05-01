@@ -24,6 +24,8 @@ function initFixedHeader(threshold) {
   initOnReady(function () {
     var header = document.getElementById("fixed_header");
     if (!header) return false;
+    if (header.dataset.fixedHeaderInit === "1") return false;
+    header.dataset.fixedHeaderInit = "1";
 
     function onScroll() {
       if (window.scrollY >= threshold) {
@@ -33,9 +35,15 @@ function initFixedHeader(threshold) {
       }
     }
 
+    // 前ページの古い header を握ったリスナーを除去（SPA遷移時の累積防止）
+    if (window._fixedHeaderOnScroll) {
+      window.removeEventListener("scroll", window._fixedHeaderOnScroll);
+    }
+    window._fixedHeaderOnScroll = onScroll;
+
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return true;
+    return false;
   });
 }
 
@@ -44,16 +52,19 @@ function initFixedHeader(threshold) {
 // ==============================
 
 window.initOnReady(function () {
-  if (window.matchMedia("(max-width: 960px)").matches) return true;
+  if (window.matchMedia("(max-width: 960px)").matches) return false;
 
   const blockAbout = document.getElementById("block-about");
   if (!blockAbout) return false;
+  if (blockAbout.dataset.bgSwitchInit === "1") return false;
 
   const bgContainer = document.getElementById("block-about_bg");
   if (!bgContainer) return false;
 
   const lis = blockAbout.querySelectorAll(":scope > ul > li");
   if (lis.length < 4) return false;
+
+  blockAbout.dataset.bgSwitchInit = "1";
 
   // #block-about_bg 直下の背景要素
   // bgItems[0] → li[1]（2番目）
@@ -106,7 +117,7 @@ window.initOnReady(function () {
   // #block-about から外れたらデフォルトに戻る
   blockAbout.addEventListener("mouseleave", resetBg);
 
-  return true;
+  return false;
 });
 
 // ==============================
