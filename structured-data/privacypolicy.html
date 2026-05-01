@@ -1,0 +1,39 @@
+<!--
+  構造化データ：プライバシーポリシー（/privacypolicy）
+  Studio 側で {{ }} 内の変数を設定する
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{siteUrl}}/privacypolicy/#webpage",
+      "url": "{{siteUrl}}/privacypolicy",
+      "name": "プライバシーポリシー",
+      "description": "{{privacypolicyDescription}}",
+      "isPartOf": { "@id": "{{siteUrl}}/#website" },
+      "inLanguage": "ja",
+      "breadcrumb": { "@id": "{{siteUrl}}/privacypolicy/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{siteUrl}}/privacypolicy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "プライバシーポリシー",
+          "item": "{{siteUrl}}/privacypolicy"
+        }
+      ]
+    }
+  ]
+}
+</script>

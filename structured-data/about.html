@@ -1,0 +1,39 @@
+<!--
+  構造化データ：PYLAとは（/about）
+  Studio 側で {{ }} 内の変数を設定する
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "{{siteUrl}}/about/#webpage",
+      "url": "{{siteUrl}}/about",
+      "name": "PYLAとは",
+      "description": "{{aboutDescription}}",
+      "isPartOf": { "@id": "{{siteUrl}}/#website" },
+      "inLanguage": "ja",
+      "breadcrumb": { "@id": "{{siteUrl}}/about/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{siteUrl}}/about/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PYLAとは",
+          "item": "{{siteUrl}}/about"
+        }
+      ]
+    }
+  ]
+}
+</script>

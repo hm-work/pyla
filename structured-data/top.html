@@ -1,0 +1,43 @@
+<!--
+  構造化データ：トップ（/）
+  Studio 側で {{ }} 内の変数を設定する
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{siteUrl}}/#organization",
+      "name": "{{orgName}}",
+      "url": "{{siteUrl}}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{orgLogo}}"
+      },
+      "sameAs": [
+        "{{orgSocial1}}",
+        "{{orgSocial2}}"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{siteUrl}}/#website",
+      "url": "{{siteUrl}}/",
+      "name": "{{siteName}}",
+      "publisher": { "@id": "{{siteUrl}}/#organization" },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{siteUrl}}/#webpage",
+      "url": "{{siteUrl}}/",
+      "name": "{{siteName}}",
+      "description": "{{topDescription}}",
+      "isPartOf": { "@id": "{{siteUrl}}/#website" },
+      "about": { "@id": "{{siteUrl}}/#organization" },
+      "inLanguage": "ja"
+    }
+  ]
+}
+</script>

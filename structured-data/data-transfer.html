@@ -1,0 +1,39 @@
+<!--
+  構造化データ：利用者情報の外部送信について（/data-transfer）
+  Studio 側で {{ }} 内の変数を設定する
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{siteUrl}}/data-transfer/#webpage",
+      "url": "{{siteUrl}}/data-transfer",
+      "name": "利用者情報の外部送信について",
+      "description": "{{dataTransferDescription}}",
+      "isPartOf": { "@id": "{{siteUrl}}/#website" },
+      "inLanguage": "ja",
+      "breadcrumb": { "@id": "{{siteUrl}}/data-transfer/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{siteUrl}}/data-transfer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "利用者情報の外部送信について",
+          "item": "{{siteUrl}}/data-transfer"
+        }
+      ]
+    }
+  ]
+}
+</script>

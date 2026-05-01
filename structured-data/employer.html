@@ -1,0 +1,39 @@
+<!--
+  構造化データ：お仕事を依頼したい方（/employer）
+  Studio 側で {{ }} 内の変数を設定する
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{siteUrl}}/employer/#webpage",
+      "url": "{{siteUrl}}/employer",
+      "name": "お仕事を依頼したい方",
+      "description": "{{employerDescription}}",
+      "isPartOf": { "@id": "{{siteUrl}}/#website" },
+      "inLanguage": "ja",
+      "breadcrumb": { "@id": "{{siteUrl}}/employer/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{siteUrl}}/employer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "{{siteUrl}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "お仕事を依頼したい方",
+          "item": "{{siteUrl}}/employer"
+        }
+      ]
+    }
+  ]
+}
+</script>
